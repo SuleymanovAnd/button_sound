@@ -14,7 +14,15 @@ int main(int argc, char *argv[]) {
     window.resize(350,350);
 
 
+    auto *player = new QMediaPlayer(&window);
+    QString filePath = "://peg_push.mp3";
+    QObject::connect(redButton,&QPushButton::clicked,[player,&filePath]()
+    {
+        player->setMedia(QUrl::fromLocalFile(filePath));
+        player->setVolume(100);
+        player->play();
 
+    });
     window.show();
     return a.exec();
 }

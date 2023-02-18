@@ -1,7 +1,6 @@
 #include <redButton.h>
 #include <QTimer>
-#include <QMediaPlayer>
-#include <QMediaContent>
+
 
 RedButton::RedButton (QWidget *parent) {
     Q_INIT_RESOURCE(button);
@@ -15,13 +14,6 @@ RedButton::RedButton (QWidget *parent) {
     mCurrentButton = &mButton;
     setGeometry(mCurrentButton->rect());
     connect (this, &QPushButton::clicked,this,&RedButton::setDown);
-
-    connect(this,&QPushButton::clicked,[]()
-    {   QMediaPlayer player;
-        player.setMedia(QUrl::fromLocalFile("://peg_push.mp3"));
-        player.setVolume(100);
-        player.play();
-    });
 }
 
 void RedButton::paintEvent(QPaintEvent *e) {
