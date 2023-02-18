@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>red.png</file>
+        <file>red_push.png</file>
+        <file>peg_click.mp3</file>
+    </qresource>
+</RCC>
