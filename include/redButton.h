@@ -11,6 +11,8 @@
 #include <QPainter>
 #include <QtCore>
 #include <QtGui>
+#include <QMediaPlayer>
+#include <QMediaContent>
 
 class RedButton : public QPushButton {
 Q_OBJECT
@@ -30,6 +32,7 @@ private :
     QPixmap *mCurrentButton;
     QPixmap mButton;
     QPixmap mPressedButton;
+    QMediaPlayer player;
 };
 
 #endif //BUTTON_SOUND_REDBUTTON_H
