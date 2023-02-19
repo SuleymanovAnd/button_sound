@@ -27,7 +27,6 @@ set(SOURCE
 set(INCLUDE
         ${MY_DIRECTORY}/redButton.h
         )
-set(CMAKE_AUTORCC ON)
 
 add_executable(button_sound ${SOURCE} ${INCLUDE} )
 target_include_directories(button_sound PUBLIC ${MY_DIRECTORY})
