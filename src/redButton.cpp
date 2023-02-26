@@ -31,7 +31,12 @@ void RedButton::keyPressEvent (QKeyEvent *e)
 }
 
 void RedButton::setDown()
-{
+
+{   player.setAudioOutput(&audioOut);
+    player.setSource(QUrl::fromLocalFile("://peg_click.mp3"));
+    audioOut.setVolume(90);
+    player.play();
+
     mCurrentButton = &mPressedButton;
     update();
     QTimer::singleShot(100,this,&RedButton::setUp);

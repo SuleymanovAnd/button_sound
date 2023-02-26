@@ -6,15 +6,15 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(CMAKE_PREFIX_PATH "D:/QtP/5.15.2/mingw81_64/lib/cmake")
+set(CMAKE_PREFIX_PATH "D:/QtP/6.4.2/mingw_64/lib/cmake")
 
-find_package(Qt5 COMPONENTS
+find_package(Qt6 COMPONENTS
         Core
         Gui
         Widgets
-        REQUIRED
         Multimedia
         MultimediaWidgets
+        REQUIRED
         )
 
 set(MY_DIRECTORY ${CMAKE_SOURCE_DIR}/include)
@@ -32,11 +32,11 @@ add_executable(button_sound ${SOURCE} ${INCLUDE} )
 target_include_directories(button_sound PUBLIC ${MY_DIRECTORY})
 
 target_link_libraries(button_sound
-        Qt5::Core
-        Qt5::Gui
-        Qt5::Widgets
-        Qt5::Multimedia
-        Qt5::MultimediaWidgets
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Widgets
+        Qt6::Multimedia
+        Qt6::MultimediaWidgets
         )
 
 if (WIN32)
@@ -61,7 +61,7 @@ if (WIN32)
     foreach (QT_LIB Core Gui Widgets)
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E copy
-                "${QT_INSTALL_PATH}/bin/Qt5${QT_LIB}${DEBUG_SUFFIX}.dll"
+                "${QT_INSTALL_PATH}/bin/Qt6${QT_LIB}${DEBUG_SUFFIX}.dll"
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>")
     endforeach (QT_LIB)
 endif ()
